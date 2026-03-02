@@ -2,9 +2,15 @@
 
 awww img "$1" --transition-type grow
 
-wal -i "$1"
+timeout 3s wal -i "$1" -n 2>/dev/null || wal --theme base16-mocha -n
+
+ROFI_COLORS="$HOME/.cache/wal/colors-rofi-dark.rasi"
+
+if [ -f "$ROFI_COLORS" ]; then
+    sleep 0.5
+    sed -i -E 's/(background:\s*#[0-9a-fA-F]{6});/\1D9;/' "$ROFI_COLORS"
+fi
 
 pkill waybar
-waybar & disown
-
+waybar > /dev/null 2>&1 & disown
 makoctl reload

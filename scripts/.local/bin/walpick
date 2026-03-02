@@ -1,0 +1,27 @@
+#!/bin/bash
+
+WALL_DIR="$HOME/Pictures/wallpapers"
+
+LIST=""
+for img in "$WALL_DIR"/*.{jpg,jpeg,png,webp,gif}; do
+    [ -e "$img" ] || continue
+    filename=$(basename "$img")
+    LIST+="$filename\0icon\x1f$img\n"
+done
+
+CHOICE=$(echo -en "$LIST" | rofi -dmenu -i -p "󰸉 Wallpaper" \
+    -show-icons \
+    -theme-str '
+        window { width: 900px; border-radius: 20px; border: 3px solid; border-color: @color2; }
+        mainbox { children: [ "inputbar", "listview" ]; }
+        listview { columns: 3; lines: 3; spacing: 15px; flow: horizontal; fixed-columns: true; }
+        element { orientation: vertical; padding: 15px; border-radius: 15px; }
+        element-icon { size: 200px; horizontal-align: 0.5; vertical-align: 0.5; }
+        element-text { horizontal-align: 0.5; vertical-align: 0.5; }
+        inputbar { margin: 0px 0px 10px 0px; }
+        entry { placeholder: "Search wallpapers..."; }
+    ')
+
+if [ -n "$CHOICE" ]; then
+    ~/.local/bin/changewal "$WALL_DIR/$CHOICE"
+fi
