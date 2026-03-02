@@ -1,0 +1,295 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+
+* {
+
+    color: @foreground;
+
+    border: none;
+
+    border-radius: 0;
+
+    min-height: 0;
+
+    font-family: 'JetBrainsMono Nerd Font Propo';
+
+    font-size: 12px;
+
+}
+
+
+window#waybar {
+
+    background-color: rgba(26, 27, 38, 0.3);
+
+    transition-property: background-color;
+
+    transition-duration: .5s;
+
+    border-radius: 32px;
+
+}
+
+
+window#waybar.empty #window {
+
+    background: transparent;
+
+    background-color: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: transparent;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+
+/* Group & Container Layouts */
+
+.modules-left {
+
+    margin-left: 8px;
+
+}
+
+
+.modules-right {
+
+    margin-right: 8px;
+
+}
+
+
+/* Pill Styling for Center and Right Groups */
+
+#group-center2,
+
+#group-center3,
+
+#group-right1 {
+
+    background: alpha(@foreground, 0.1);
+
+    border-radius: 12px;
+
+    padding: 0px 8px;
+
+    margin: 3.5px 4px;
+
+    font-weight: 800;
+
+}
+
+
+/* Workspaces Module */
+
+#workspaces {
+
+    padding: 0px 5px;
+
+    margin: 3.5px 3.5px;
+
+    border-radius: 11px;
+
+    background-color: alpha(@foreground, 0.1);
+
+    opacity: 0.95;
+
+}
+
+
+#workspaces button {
+
+    all: initial;
+
+    padding: 0 6px;
+
+    margin: 0 1.5px;
+
+    min-width: 9px;
+
+    color: @foreground;
+
+}
+
+
+#workspaces button.empty {
+
+    opacity: 0.5;
+
+}
+
+
+#workspaces button.active {
+
+    border-radius: 18px;
+
+    background: alpha(@foreground, 0.2);
+
+    opacity: 1;
+
+    margin: 4px 5px;
+
+    padding: 0 5px;
+
+}
+
+
+#workspaces button:hover {
+
+    border-radius: 18px;
+
+    background: alpha(@foreground, 0.3);
+
+    opacity: 1;
+
+}
+
+
+#workspaces button.urgent {
+
+    border-radius: 18px;
+
+    background: alpha(#f13333, 0.5);
+
+    opacity: 1;
+
+    margin: 4px 5px;
+
+    padding: 0 5px;
+
+}
+
+
+/* Individual Module Spacing */
+
+#battery,
+
+#pulseaudio,
+
+#network,
+
+#bluetooth,
+
+#idle_inhibitor {
+
+    margin: 0 6px;
+
+}
+
+
+#cpu,
+#memory {
+
+    font-size: 16px;
+
+    padding: 0 2px;
+
+}
+
+
+#clock {
+
+    background: alpha(@foreground, 0.1);
+
+    border-radius: 12px;
+
+    padding: 0px 12px;
+
+    margin: 3.5px 4px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+#custom-weather {
+
+    font-size: 14px;
+
+    margin-left: 5px;
+
+}
+
+#custom-window {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+#custom-launcher {
+
+    background: alpha(@foreground, 0.1);
+
+    border-radius: 99px;
+
+    margin: 4px 5px 4px -3px;
+
+    padding: 0 10px;
+
+}
+
+
+
+#window {
+
+    padding: 3px 10px;
+
+    border-radius: 14px;
+
+    background: alpha(@foreground, 0.05);
+
+    font-size: 12px;
+
+}
+
+
+/* Tray Styling */
+
+#tray {
+
+    background: transparent;
+
+    padding: 0px 5px;
+
+}
+
+
+/* Media Player Styling */
+
+#custom-media {
+
+    padding: 0 8px;
+
+    font-weight: 600;
+
+}
+
+
+tooltip {
+
+    background: @background;
+
+    border: 1px solid alpha(@foreground, 0.2);
+
+    border-radius: 8px;
+
+}
+
+
+tooltip label {
+
+    color: @foreground;
+
+    padding: 5px;
+
+}
