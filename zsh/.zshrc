@@ -10,7 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-
+fastfetch
+echo
 source $ZSH/oh-my-zsh.sh
 
 export STOWMAN_DOTDIR="$HOME/dotfiles"
